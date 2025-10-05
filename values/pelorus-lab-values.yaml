@@ -1,0 +1,28 @@
+# Pelorus Lab PoC Values
+# Minimal configuration for GitOps pattern proof
+
+# Prometheus configuration
+prometheus_storage: true
+prometheus_storage_pvc_capacity: 5Gi
+prometheus_retention: 7d
+prometheus_retention_size: 4GB
+
+# Disable all exporters for initial PoC
+# (no real GitLab/Jira credentials in lab)
+exporters:
+  instances:
+    - app_name: deploytime-exporter
+      exporter_type: deploytime
+      enabled: false
+
+    - app_name: failuretime-exporter
+      exporter_type: failure
+      enabled: false
+
+    - app_name: committime-exporter
+      exporter_type: committime
+      enabled: false
+
+    - app_name: webhook-exporter
+      exporter_type: webhook
+      enabled: false
