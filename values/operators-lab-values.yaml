@@ -1,0 +1,5 @@
+# Operators chart values override for lab environment
+# Matches available versions in lab cluster catalog
+
+grafana_subscription_version: 5.18.0
+prometheus_subscription_version: 0.56.3
